@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<title>Urime Fitër Bajrami</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(180deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    overflow:hidden;
+}
+
+/* Yjet */
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    background:white;
+    border-radius:50%;
+    animation:blink 2s infinite alternate;
+}
+
+@keyframes blink{
+    from{opacity:0.2}
+    to{opacity:1}
+}
+
+/* Hëna */
+.moon{
+    position:absolute;
+    top:60px;
+    right:80px;
+    width:80px;
+    height:80px;
+    background:#fff8dc;
+    border-radius:50%;
+    box-shadow:-15px 0 0 5px #0f2027;
+}
+
+/* Kartolina */
+.card{
+    background:white;
+    color:#333;
+    width:320px;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    display:none;
+    animation:open 1s ease;
+}
+
+@keyframes open{
+    from{transform:scale(0);opacity:0;}
+    to{transform:scale(1);opacity:1;}
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    border:none;
+    border-radius:8px;
+    background:#2a9d8f;
+    color:white;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#21867a;
+}
+
+h1{
+    margin-bottom:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="moon"></div>
+
+<h1 id="title">🌙 Urime Fitër Bajrami</h1>
+
+<button onclick="hap()">Hap Urimin</button>
+
+<div class="card" id="card">
+<h2>Gëzuar Fitër Bajramin!</h2>
+<p>
+Ju uroj paqe, shëndet dhe lumturi në familjen tuaj.<br><br>
+Allahu ju pranoftë agjërimin, lutjet dhe veprat e mira.<br><br>
+Qoftë kjo ditë e mbushur me gëzim, dashuri dhe begati për ju dhe të dashurit tuaj.
+<br><br>
+Me rrespekt!
+Serald Muceku
+</p>
+</div>
+
+<script>
+
+function hap(){
+    document.getElementById("card").style.display="block";
+}
+
+/* krijimi i yjeve */
+for(let i=0;i<60;i++){
+    const star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"%";
+    star.style.left=Math.random()*100+"%";
+    star.style.animationDuration=(Math.random()*3+1)+"s";
+    document.body.appendChild(star);
+}
+
+</script>
+
+</body>
+</html>
